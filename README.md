@@ -47,7 +47,7 @@
 
 2）点击的热区问题： OpacityTapWidget内部设置padding增加了点击的热区。
 
-```
+```dart
 new OpacityTapWidget(
     onTap: () {
         Navigator.of(context).pop();
@@ -64,7 +64,7 @@ new OpacityTapWidget(
 
 - Dio初始化
 
-```
+```dart
 dio = new Dio()
       ..options = BaseOptions(
           baseUrl: AppConfig.baseUrl,
@@ -76,7 +76,7 @@ dio = new Dio()
 
 - 拦截器
 
-```
+```dart
 class HeaderInterceptor extends Interceptor {
   @override
   onRequest(RequestOptions options) {
@@ -100,7 +100,7 @@ class HeaderInterceptor extends Interceptor {
 
 - 属性监听
 
-```
+```dart
 方式1：
 final subjectMore = new BehaviorSubject<bool>.seeded(false);
 方式2：
@@ -114,7 +114,7 @@ _provide.subjectMore.listen((hasMore) {
   
 ### 3.flutter_svg 初始化svg格式的图片
 
-```
+```dart
 new SvgPicture.asset("images/is_single.svg", width: 28, height: 28);
 ```
 
@@ -122,7 +122,7 @@ new SvgPicture.asset("images/is_single.svg", width: 28, height: 28);
 
 由于数据的存储和获取是异步的，但是在项目中使用同步的方法获取用户信息就很是有必要，所以该项目再初始化之前就初始化了shared_preferences，解决了在项目中使用同步的方法获取用户信息这个问题。
 
-```
+```dart
 void main() async {
   /// 先初始化shared_preferences
   await AppConfig.init();
